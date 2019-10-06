@@ -4,6 +4,7 @@ import os
 import cv2
 import random
 import pickle
+import tensorflow as tf
 
 DATADIR = "Pets"
 CATEGORIES = ["Dog", "Cat"]
