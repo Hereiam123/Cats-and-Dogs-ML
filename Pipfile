@@ -9,6 +9,7 @@ verify_ssl = true
 numpy = "*"
 matplotlib = "*"
 opencv-python = "*"
+pickle = "*"
 
 [requires]
 python_version = "3.6"

@@ -2,6 +2,8 @@ import numpy as np
 import matplotlib.pyplot as plt
 import os
 import cv2
+import random
+import pickle
 
 DATADIR = "Pets"
 CATEGORIES = ["Dog", "Cat"]
@@ -11,7 +13,7 @@ training_data = []
 IMG_SIZE = 50
 
 
-def create_training_data():
+"""def create_training_data():
     for category in CATEGORIES:
         path = os.path.join(DATADIR, category)
         class_num = CATEGORIES.index(category)
@@ -28,4 +30,28 @@ def create_training_data():
 
 
 create_training_data()
-print(len(training_data))
+# print(len(training_data))
+random.shuffle(training_data)
+
+for sample in training_data[:10]:
+    print(sample[1])
+
+# Feature set
+X = []
+
+# Labels
+y = []
+
+for features, label in training_data:
+    X.append(features)
+    y.append(label)
+
+# Saving normalized data to prevent above from rerunning
+X = np.array(X).reshape(-1, IMG_SIZE, IMG_SIZE, 1)
+pickle_out = open("X.pickle", "wb")
+pickle.dump(X, pickle_out)
+pickle_out.close()
+
+pickle_out = open("y.pickle", "wb")
+pickle.dump(y, pickle_out)
+pickle_out.close()"""
