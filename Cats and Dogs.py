@@ -1,12 +1,13 @@
-import numpy as np
-import matplotlib.pyplot as plt
-import os
-import cv2
-import random
-import pickle
 import tensorflow as tf
-from tensorflow.keras.models import Sequential
+import pickle
+import random
+import cv2
+import os
+import matplotlib.pyplot as plt
+import numpy as np
+import tensorflow.keras
 from tensorflow.keras.layers import Dense, Dropout, Activation, Flatten, Conv2D, MaxPooling2D
+from tensorflow.keras.models import Sequential
 
 DATADIR = "Pets"
 CATEGORIES = ["Dog", "Cat"]
@@ -84,4 +85,4 @@ model.add(Activation('sigmoid'))
 model.compile(loss="binary_crossentropy",
               optimizer="adam", metrics=['accuracy'])
 
-model.fit(X, y, batch_size=32, epochs=10, validation_split=0.1)
+model.fit(X, y, batch_size=32, epochs=3, validation_split=0.1)

@@ -11,6 +11,8 @@ numpy = "*"
 matplotlib = "*"
 opencv-python = "*"
 tensorflow = "*"
+plaidml-keras = "*"
+plaidbench = "*"
 
 [requires]
 python_version = "3.6"
